@@ -1,23 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Apply background dynamically
-    document.body.style.background = "url('https://example.com/imagen-vaqueria.jpg') no-repeat center center fixed";
-    document.body.style.backgroundSize = "cover";
-
-    // Pause other videos when one is playing
-    const videos = document.querySelectorAll("video");
-
-    videos.forEach((video, index) => {
-        video.addEventListener("play", () => {
-            videos.forEach((v, i) => {
-                if (i !== index) {
-                    v.pause();
-                }
-            });
-        });
-    });
-
-    // Generate buttons dynamically
+    // Select catalog container
     const catalog = document.querySelector(".catalog");
+
+    // Define hat data
     const hats = [
         {
             title: "Sombrero Llanero",
@@ -31,17 +16,32 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    catalog.innerHTML = '<h1>Catálogo de Sombreros</h1>';
-    
+    // Create header
+    const header = document.createElement("h1");
+    header.textContent = "Catálogo de Sombreros";
+    header.style.marginBottom = "40px";
+    catalog.appendChild(header);
+
+    // Generate hat items dynamically
     hats.forEach(hat => {
         const videoItem = document.createElement("div");
         videoItem.className = "video-item";
 
-        videoItem.innerHTML = `
-            <h2>${hat.title}</h2>
-            <video src="${hat.videoSrc}" controls></video>
-            <a class="quote-button" href="${hat.whatsappLink}" target="_blank">Cotizar</a>
-        `;
+        const title = document.createElement("h2");
+        title.textContent = hat.title;
+
+        const video = document.createElement("video");
+        video.src = hat.videoSrc;
+        video.controls = true;
+
+        const button = document.createElement("a");
+        button.href = hat.whatsappLink;
+        button.target = "_blank";
+        button.textContent = "Cotizar";
+
+        videoItem.appendChild(title);
+        videoItem.appendChild(video);
+        videoItem.appendChild(button);
 
         catalog.appendChild(videoItem);
     });
