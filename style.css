@@ -3,6 +3,8 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     text-align: center;
+    background: url('https://example.com/imagen-vaqueria.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .catalog {
@@ -19,7 +21,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.video-item h2, .video-item .quote-button {
+.video-item h2 {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -27,24 +29,23 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     margin: 0;
-}
-
-.video-item h2 {
     font-size: 18px;
 }
 
-.quote-button {
-    top: auto;
+.video-item a {
+    position: absolute;
     bottom: 10px;
+    left: 10px;
     font-size: 14px;
     color: #fff;
     background-color: #007bff;
     text-decoration: none;
     border-radius: 5px;
+    padding: 5px 10px;
     transition: background-color 0.3s;
 }
 
-.quote-button:hover {
+.video-item a:hover {
     background-color: #0056b3;
 }
 
