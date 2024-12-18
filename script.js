@@ -1,48 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Select catalog container
-    const catalog = document.querySelector(".catalog");
+    // Contenedor principal del catálogo
+    const catalogContainer = document.getElementById("catalog-container");
 
-    // Define hat data
-    const hats = [
+    // Lista de sombreros con sus datos
+    const sombreros = [
         {
             title: "Sombrero Llanero",
-            videoSrc: "https://example.com/video-sombrero1.mp4",
-            whatsappLink: "https://wa.me/1234567890?text=Hola,%20quiero%20cotizar%20el%20Sombrero%20Llanero%20(Video:%20https://example.com/video-sombrero1.mp4)"
+            videoSrc: "https://example.com/video1.mp4",
+            whatsappLink: "https://wa.me/1234567890?text=Hola,%20quiero%20cotizar%20el%20Sombrero%20Llanero"
         },
         {
             title: "Sombrero Vaquero",
-            videoSrc: "https://example.com/video-sombrero2.mp4",
-            whatsappLink: "https://wa.me/1234567890?text=Hola,%20quiero%20cotizar%20el%20Sombrero%20Vaquero%20(Video:%20https://example.com/video-sombrero2.mp4)"
+            videoSrc: "https://example.com/video2.mp4",
+            whatsappLink: "https://wa.me/1234567890?text=Hola,%20quiero%20cotizar%20el%20Sombrero%20Vaquero"
         }
+        // Agrega más sombreros aquí si es necesario
     ];
 
-    // Create header
-    const header = document.createElement("h1");
-    header.textContent = "Catálogo de Sombreros";
-    header.style.marginBottom = "40px";
-    catalog.appendChild(header);
-
-    // Generate hat items dynamically
-    hats.forEach(hat => {
+    // Generar dinámicamente cada sombrero
+    sombreros.forEach((sombrero) => {
+        // Crear contenedor del video
         const videoItem = document.createElement("div");
         videoItem.className = "video-item";
 
+        // Título
         const title = document.createElement("h2");
-        title.textContent = hat.title;
+        title.textContent = sombrero.title;
 
+        // Video
         const video = document.createElement("video");
-        video.src = hat.videoSrc;
+        video.src = sombrero.videoSrc;
         video.controls = true;
 
+        // Botón de cotizar
         const button = document.createElement("a");
-        button.href = hat.whatsappLink;
+        button.href = sombrero.whatsappLink;
         button.target = "_blank";
         button.textContent = "Cotizar";
 
+        // Añadir elementos al contenedor del video
         videoItem.appendChild(title);
-        videoItem.appendChild(video);
         videoItem.appendChild(button);
+        videoItem.appendChild(video);
 
-        catalog.appendChild(videoItem);
+        // Añadir el contenedor del video al catálogo
+        catalogContainer.appendChild(videoItem);
     });
 });
