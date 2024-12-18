@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SorteoApp</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hat Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <div class="main-container">
-        <img src="https://cdn.pixabay.com/photo/2024/08/31/18/47/18-47-52-728_960_720.png" alt="Logotipo" class="logo">
-        <h1>SorteoApp</h1>
-        <p>Ingresa al sorteo:</p>
-        <input type="text" id="name" placeholder="Tu nombre">
-        <button onclick="addParticipant()">Participar</button>
+    <div class="catalog">
+        <h1>Catálogo de Sombreros</h1>
 
-        <h2>Participantes</h2>
-        <div class="glass-box">
-            <ul id="participantsList"></ul>
+        <div class="video-item">
+            <video id="video1" src="https://example.com/video-sombrero1.mp4" controls autoplay muted loop></video>
+            <h2>Sombrero Llanero</h2>
+            <a class="quote-button" href="https://wa.me/1234567890?text=Hola,%20quiero%20cotizar%20el%20Sombrero%20Llanero%20(Video:%20https://example.com/video-sombrero1.mp4)" target="_blank">Cotizar</a>
         </div>
 
-        <h2>Ganador</h2>
-        <div id="digitalBoard">Nadie ha ganado aún</div>
-        <button onclick="pickWinner()">Elegir Ganador</button>
-    </div>
+        <div class="video-item">
+            <video id="video2" src="https://example.com/video-sombrero2.mp4" controls></video>
+            <h2>Sombrero Vaquero</h2>
+            <a class="quote-button" href="https://wa.me/1234567890?text=Hola,%20quiero%20cotizar%20el%20Sombrero%20Vaquero%20(Video:%20https://example.com/video-sombrero2.mp4)" target="_blank">Cotizar</a>
+        </div>
 
-    <script src="script.js"></script>
+        <!-- Add more hats here -->
+
+    </div>
 </body>
 </html>
